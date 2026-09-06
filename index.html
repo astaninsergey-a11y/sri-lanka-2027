@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<title>Sri Lanka Family Guide 2027 — v8.3 mobile</title>
+<title>Sri Lanka Family Guide 2027 — v8.4 iPhone</title>
 <style>
 :root{--bg:#f3f7f5;--card:#fff;--ink:#15332f;--muted:#647a75;--accent:#0f766e;--accent2:#115e59;--line:#dce9e5;--warn:#fff7d6;--danger:#fff0ed}
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}
@@ -233,8 +233,49 @@ color:#0f766e;font-weight:800;margin-top:12px}
 body.js-ready .app-main > .panel { display:none !important; }
 body.js-ready .app-main > .panel.active { display:block !important; }
 </style>
-
-</head>
+<style id="iphone-stable-fix">
+.app-main > .panel{
+  display:block !important;
+  max-width:1280px;
+  margin:0 auto 24px !important;
+  scroll-margin-top:76px;
+}
+.app-main > .panel:not(#home){
+  border-top:1px solid var(--app-line,#dce9e5);
+  padding-top:18px;
+}
+.mobile-more,.fab-top{display:none !important}
+body{padding-bottom:82px !important}
+.mobile-nav{
+  position:fixed;left:8px;right:8px;bottom:8px;z-index:3200;
+  display:grid !important;grid-template-columns:repeat(5,1fr);gap:6px;
+  padding:8px;background:rgba(255,255,255,.97);
+  border:1px solid var(--app-line,#dce9e5);border-radius:20px;
+  box-shadow:0 14px 36px rgba(25,64,55,.18);
+}
+.mobile-nav a{
+  text-decoration:none;text-align:center;border-radius:13px;
+  min-height:50px;padding:6px 2px;font-size:11px;color:var(--app-text,#15332f);
+  display:flex;align-items:center;justify-content:center;line-height:1.35;
+}
+.mobile-nav a:first-child{
+  background:var(--app-accent-soft,#e9f6f2);color:var(--app-accent,#0f766e);font-weight:900
+}
+.sidebar-nav a{
+  width:100%;display:flex;align-items:center;gap:10px;
+  color:var(--app-text,#15332f);border-radius:14px;padding:12px 13px;
+  font-weight:800;text-decoration:none
+}
+.header-actions a{
+  border:1px solid var(--app-line,#dce9e5);background:white;border-radius:12px;
+  min-height:42px;padding:0 14px;font-weight:800;color:var(--app-text,#15332f);
+  text-decoration:none;display:flex;align-items:center
+}
+@media(min-width:821px){
+  .mobile-nav{display:none !important}
+  body{padding-bottom:0 !important}
+}
+</style></head>
 <body><div class="app-shell">
 <header class="app-header">
 <div class="brand">
@@ -245,29 +286,29 @@ body.js-ready .app-main > .panel.active { display:block !important; }
 </div>
 </div>
 <div class="header-actions">
-<button data-open-tab="route">📅 Маршрут</button>
-<button data-open-tab="attractions">🗺 Карта</button>
+<a href="#route">📅 Маршрут</a>
+<a href="#attractions">🗺 Карта</a>
 </div>
 </header>
 <div class="app-layout">
 <aside class="sidebar">
 <div class="sidebar-group">Путешествие</div>
 <nav class="sidebar-nav">
-<button data-open-tab="home">🏠 Главная</button>
-<button data-open-tab="route">📅 Маршрут по дням</button>
-<button data-open-tab="attractions">🗺 Достопримечательности</button>
-<button data-open-tab="stay">🏨 Где жить</button>
-<button data-open-tab="practice">🧭 Практика</button>
+<a href="#home">🏠 Главная</a>
+<a href="#route">📅 Маршрут по дням</a>
+<a href="#attractions">🗺 Достопримечательности</a>
+<a href="#stay">🏨 Где жить</a>
+<a href="#practice">🧭 Практика</a>
 </nav>
 <div class="sidebar-group">Подготовка</div>
 <nav class="sidebar-nav">
-<button data-open-tab="prep">🎒 Подготовка</button>
-<button data-open-tab="packing">🧳 Что взять</button>
-<button data-open-tab="places">📍 Рядом с виллой</button>
-<button data-open-tab="trips">🚗 Поездки</button>
-<button data-open-tab="diving">🤿 Дайвинг</button>
-<button data-open-tab="budget">💵 Бюджет</button>
-<button data-open-tab="emergency">🚑 Экстренно</button>
+<a href="#prep">🎒 Подготовка</a>
+<a href="#packing">🧳 Что взять</a>
+<a href="#places">📍 Рядом с виллой</a>
+<a href="#trips">🚗 Поездки</a>
+<a href="#diving">🤿 Дайвинг</a>
+<a href="#budget">💵 Бюджет</a>
+<a href="#emergency">🚑 Экстренно</a>
 </nav>
 </aside>
 <main class="app-main"><section class="panel active" id="home">
@@ -281,13 +322,13 @@ body.js-ready .app-main > .panel.active { display:block !important; }
 <h2>✈️ Прилёт</h2>
 <p><b>30 декабря 2026, 08:10</b> — CMB.</p>
 <p>После прилёта едем в Pegasus Reef.</p>
-<button class="btn primary" data-open-tab="route">Открыть маршрут</button>
+<a class="btn primary" href="#route">Открыть маршрут</a>
 </div>
 <div class="card">
 <h2>🏨 Коломбо</h2>
 <p><b>Pegasus Reef – A Beach Resort in Colombo</b></p>
 <p>30 декабря — 4 января, 5 ночей.</p>
-<button class="btn" data-open-tab="stay">Все жильё</button>
+<a class="btn" href="#stay">Все жильё</a>
 </div>
 <div class="card">
 <h2>⛰ Элла</h2>
@@ -296,21 +337,21 @@ body.js-ready .app-main > .panel.active { display:block !important; }
 <p>5 января — Little Adam’s Peak, Flying Ravana, Nine Arches.<br/>
              6 января — Ella Rock + поезд.<br/>
              7 января — Dowa Temple + чайная фабрика.</p>
-<button class="btn" data-open-tab="route">Дни в Элле</button>
+<a class="btn" href="#route">Дни в Элле</a>
 </div>
 <div class="card">
 <h2>🚗 Машина</h2>
 <p>Получение арендованной машины в Коломбо <b>2 января</b>, далее используем до конца поездки.</p>
-<button class="btn" data-open-tab="prep">Подготовка</button>
+<a class="btn" href="#prep">Подготовка</a>
 </div>
 </div>
 <div class="card">
 <h2>Быстрый доступ</h2>
 <div class="buttons">
-<button class="btn primary" data-open-tab="route">📅 Дни</button>
-<button class="btn" data-open-tab="attractions">🗺 Карта</button>
-<button class="btn" data-open-tab="stay">🏨 Жильё</button>
-<button class="btn" data-open-tab="prep">🎒 Подготовка</button>
+<a class="btn primary" href="#route">📅 Дни</a>
+<a class="btn" href="#attractions">🗺 Карта</a>
+<a class="btn" href="#stay">🏨 Жильё</a>
+<a class="btn" href="#prep">🎒 Подготовка</a>
 </div>
 </div>
 </section><section class="panel" id="route"><input class="search" id="routeSearch" placeholder="Найти дату или место: Элла, дайвинг, 06.01"/><div class="card">
@@ -3722,66 +3763,23 @@ body.js-ready .app-main > .panel.active { display:block !important; }
 <div class="card wide"><h2>Страховая и личные контакты</h2><p>Перед поездкой впишите в заметки телефона номер полиса, ассистанса, виллы, проката, дайв-центра и ближайшей частной больницы.</p><div class="alert note">При серьёзной ситуации сначала звоните в экстренную службу, затем в ассистанс страховой. Сохраняйте чеки и медицинские документы.</div></div>
 <div class="card"><h2>Ближайшая больница</h2><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=hospital+near+X8MV%2BJJC%2C+Koggala%2C+Sri+Lanka" target="_blank">Открыть карту</a></div>
 </div></section></main></div>
-<nav class="mobile-nav">
-<button data-open-tab="home">🏠<br/>Дом</button>
-<button data-open-tab="route">📅<br/>Дни</button>
-<button data-open-tab="attractions">🗺<br/>Карта</button>
-<button data-open-tab="stay">🏨<br/>Жильё</button>
-<button id="moreBtn">☰<br/>Ещё</button>
-</nav>
+<nav class="mobile-nav"><a href="#home">🏠
+Дом</a><a href="#route">📅
+Дни</a><a href="#attractions">🗺
+Карта</a><a href="#stay">🏨
+Жильё</a><a href="#prep">☰
+Ещё</a></nav>
 <div class="mobile-more" id="mobileMore">
 <div class="mobile-more-grid">
-<button data-open-tab="practice">🧭 Практика</button>
-<button data-open-tab="prep">🎒 Подготовка</button>
-<button data-open-tab="packing">🧳 Что взять</button>
-<button data-open-tab="places">📍 Рядом</button>
-<button data-open-tab="trips">🚗 Поездки</button>
-<button data-open-tab="diving">🤿 Дайвинг</button>
-<button data-open-tab="budget">💵 Бюджет</button>
-<button data-open-tab="emergency">🚑 Экстренно</button>
+<a href="#practice">🧭 Практика</a>
+<a href="#prep">🎒 Подготовка</a>
+<a href="#packing">🧳 Что взять</a>
+<a href="#places">📍 Рядом</a>
+<a href="#trips">🚗 Поездки</a>
+<a href="#diving">🤿 Дайвинг</a>
+<a href="#budget">💵 Бюджет</a>
+<a href="#emergency">🚑 Экстренно</a>
 </div>
 </div>
 <button aria-label="Наверх" class="fab-top" id="fabTop">↑</button>
-</div><script>
-(function(){
-  document.body.classList.add('js-ready');
-  const validIds=[...document.querySelectorAll('.app-main>.panel')].map(p=>p.id).filter(Boolean);
-
-  function openTab(id){
-    if(!validIds.includes(id)) id='home';
-    document.querySelectorAll('.app-main>.panel').forEach(p=>p.classList.toggle('active',p.id===id));
-    document.querySelectorAll('[data-open-tab]').forEach(b=>b.classList.toggle('active',b.dataset.openTab===id));
-    document.getElementById('mobileMore')?.classList.remove('open');
-    try{history.replaceState(null,'','#'+id)}catch(e){}
-    window.scrollTo({top:0,behavior:'smooth'});
-    if(id==='attractions'){
-      setTimeout(()=>{
-        try{
-          if(typeof initAttractionsMap==='function') initAttractionsMap();
-          window.dispatchEvent(new Event('resize'));
-        }catch(e){}
-      },180);
-    }
-  }
-
-  document.addEventListener('click',e=>{
-    const trigger=e.target.closest('[data-open-tab]');
-    if(trigger){e.preventDefault();openTab(trigger.dataset.openTab);return;}
-    if(e.target.closest('#moreBtn')){
-      document.getElementById('mobileMore')?.classList.toggle('open');
-      return;
-    }
-    if(e.target.closest('#fabTop')) window.scrollTo({top:0,behavior:'smooth'});
-  });
-
-  document.addEventListener('DOMContentLoaded',()=>{
-    const id=location.hash.replace('#','');
-    openTab(validIds.includes(id)?id:'home');
-  });
-
-  window.addEventListener('hashchange',()=>{
-    const id=location.hash.replace('#','');
-    if(validIds.includes(id)) openTab(id);
-  });
-})();
-</script></body></html>
+</div></body></html>
